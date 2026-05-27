@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <app-todo-form
+            [getedittodo]="getEditedtodo"
+            (emitnewobj)="AddTodo($event)"
+            (emitupdatedObj)="UpdateTodo($event)"
+            ></app-todo-form>
+        </div>
+        <div class="col-md-6">
+            <app-todo-list
+            (emiteditObj)="geteditobj($event)"
+            (emitremoveid)="onRemovetodo($event)"
+            (emitcheckedobj)="onChecked($event)"
+            [todoarray]="tododata"
+            ></app-todo-list>
+        </div>
+    </div>
+</div>

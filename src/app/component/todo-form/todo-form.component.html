@@ -1,0 +1,24 @@
+<mat-card>
+    <h1>{{isineditmode ? 'Update Todo' : 'Add Todo'}}</h1>
+    <form #todoform = "ngForm" (ngSubmit)="onAddtodo()">
+        <div class="form-group">
+            <label for="todoItem" class="text-primary">Todo Item*</label>
+            <input type="text" class="form-control" required ngModel name="todoItem">
+        </div>
+        <div class="form-group">
+            <label for="isConfirm" class="text-primary">Is Confirm</label>
+            <select type="text" class="form-control" required ngModel name="isConfirm">
+                <option [value]="true">Yes</option>
+                <option [value]="false">No</option>
+            </select>
+        </div>
+        <button
+        *ngIf="!isineditmode"
+        mat-raised-button color="primary" class="w-100">Add Todo</button>
+        <button
+        (click)="onUpdate()"
+        *ngIf="isineditmode"
+        type="button"
+        mat-raised-button color="primary" class="w-100">Update Todo</button>
+    </form>
+</mat-card>
