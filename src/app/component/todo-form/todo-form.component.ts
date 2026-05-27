@@ -38,12 +38,14 @@ export class TodoFormComponent implements OnInit, OnChanges{
   }
 
   onUpdate(){
-    let updatedObj : Itodo = {
+    if(this.todoform.valid){
+      let updatedObj : Itodo = {
       ...this.todoform.value , todoId: this.getedittodo.todoId
     }
     this.emitupdatedObj.emit(updatedObj)
 
     this.isineditmode = false
     this.todoform.reset()
+    }
    }
 }
